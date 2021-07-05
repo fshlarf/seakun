@@ -1,7 +1,7 @@
 <template>
   <div class="footer tn:mt-12 lg:pt-6 xl:pt-12 xl:mt-20">
     <div
-      class="container text-white p-4 md:grid md:grid-cols-2 md:justify-between lg:grid-cols-5 lg:gap-8 lg:justify-center"
+      class="container text-white p-6 md:grid md:grid-cols-2 md:justify-between lg:grid-cols-5 lg:gap-8 lg:justify-center"
     >
       <div class="max-w-md md:row-span-3 lg:col-span-2 md:pr-10 xl:pr-16">
         <h1 class="font-bold tn:text-lg md:text-2xl tn:my-8 lg:mb-4 xl:mb-8">
@@ -72,7 +72,11 @@
             >
           </div>
           <div class="flex gap-2 items-start">
-            <img class="ml-1" src="/images/footer/time-circle.svg" alt="#" />
+            <img
+              class="ml-[0.2rem]"
+              src="/images/footer/time-circle.svg"
+              alt="#"
+            />
             <div class="space-y-1">
               <p class="font-bold">Jam Operasional</p>
               <p>Setiap Hari</p>
