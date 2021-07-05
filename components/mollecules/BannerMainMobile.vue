@@ -8,7 +8,7 @@
       />
     </div>
     <h2 class="text-sm text-secondary font-semibold mt-3">Seakun.id</h2>
-    <p class="text-white font-bold my-2 px-3">
+    <p class="text-white font-bold my-2 px-4">
       Berlangganan bersama lebih
       <span class="text-secondary">praktis, legal, aman</span> dan
       <span class="text-secondary">murah</span>

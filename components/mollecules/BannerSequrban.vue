@@ -1,7 +1,7 @@
 <template>
   <div class="relative z-0">
     <div
-      class="w-full h-full container absolute -z-20 tn:top-16 lg:top-24 right-0 left-0 mx-auto justify-center"
+      class="w-full h-full container absolute -z-20 tn:top-16 md:top-20 lg:top-24 right-0 left-0 mx-auto justify-center"
     >
       <img
         class="w-full mx-auto self-center"
@@ -9,7 +9,7 @@
         alt="Image not found"
       />
     </div>
-    <div class="container relative z-0 md:pt-24 lg:pt-36 xl:pt-32">
+    <div class="container relative z-0 md:pt-[7.2rem] lg:pt-36 xl:pt-[9.5rem]">
       <div
         class="md:text-left md:w-7/12 lg:w-3/5 md:ml-12 lg::ml-24 xl:ml-20 md:-mr-8 xl:-mr-12"
       >
