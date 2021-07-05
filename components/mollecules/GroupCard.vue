@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 my-8 rounded-2xl shadow w-72">
+  <div class="p-6 my-6 rounded-2xl shadow-xl w-72">
     <div class="flex justify-between items-center">
       <img class="w-28" :src="`${group.brand}`" alt="#" />
       <div
@@ -26,7 +26,7 @@
       <Button
         label="Pesan Sekarang"
         variant="primary"
-        class="w-full mt-4 font-bold"
+        class="w-full mt-4 py-2 font-bold"
         :disabled="setDisabledBtn(group.members)"
         @click="$emit('click-order', group.name)"
       />

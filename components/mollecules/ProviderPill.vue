@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-sm w-72 py-3 px-3 tn:rounded-full lg:rounded-2xl px-3 shadow flex space-x-2 items-center justify-center"
+    class="max-w-sm w-72 py-3 px-3 tn:rounded-full lg:rounded-2xl px-3 shadow-xl flex space-x-2 items-center justify-center"
     @click="selectProvider(provider)"
   >
     <img class="" :src="`${provider.icon}`" alt="#" />
