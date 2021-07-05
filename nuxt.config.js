@@ -1,4 +1,4 @@
-import definePlugin from './config/definePlugin'
+import definePlugin from './config/definePlugin';
 
 export default {
   /*
@@ -42,17 +42,17 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href:
-          'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-      },
+      // {
+      //   rel: 'stylesheet',
+      //   type: 'text/css',
+      //   href:
+      //     'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css',
+      // },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+      // },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -74,13 +74,13 @@ export default {
           'sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo',
         crossorigin: 'anonymous',
       },
-      {
-        src:
-          'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js',
-        integrity:
-          'sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI',
-        crossorigin: 'anonymous',
-      },
+      // {
+      //   src:
+      //     'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js',
+      //   integrity:
+      //     'sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI',
+      //   crossorigin: 'anonymous',
+      // },
     ],
   },
   /*
@@ -111,7 +111,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    "@nuxtjs/svg"
+    '@nuxtjs/svg',
   ],
   /*
    ** Axios module configuration
