@@ -1,5 +1,5 @@
 <template>
-  <div class="card rounded-2xl">
+  <div class="card rounded-2xl p-4">
     <div class="card-body">
       <div class="wrapper w-full">
         <div class="gap-2 items-center">

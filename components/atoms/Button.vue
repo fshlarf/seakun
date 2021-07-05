@@ -26,6 +26,10 @@ export default {
       type: String,
       default: null,
     },
+    rounded: {
+      type: String,
+      default: null,
+    },
     size: {
       type: String,
       default: null,
@@ -41,9 +45,9 @@ export default {
   },
   data() {
     return {
-      classBtn: `btn btn-${this.variant} ${
+      classBtn: `focus:outline-none btn-${this.variant} ${
         this.size ? 'btn-' + this.size : ''
-      }`,
+      } ${this.rounded ? 'rounded-' + this.rounded : 'rounded'}`,
     };
   },
   methods: {
