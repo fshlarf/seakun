@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-2 w-full gap-2 items-center justify-center shadow rounded-2xl p-3"
+    class="grid grid-cols-2 w-full gap-2 items-center justify-center shadow-xl rounded-2xl p-4"
   >
     <div
       v-if="variant.images.length > 0"
@@ -26,7 +26,7 @@
           >~{{ variant.weight }} kg</span
         >
       </h2>
-      <h1 class="font-bold tn:text-xl md:text-2xl lg:text-2xl xl:text-2xl">
+      <h1 class="font-bold tn:text-lg md:text-2xl lg:text-2xl xl:text-2xl">
         {{ toRupiah(variant.totalCost) }}
         <span class="text-secondary text-sm font-normal"> / orang</span>
       </h1>
@@ -58,7 +58,7 @@
         :label="variant.isAvailable ? 'Pesan sekarang' : 'Tidak ada stok'"
         variant="primary"
         :disabled="!variant.isAvailable"
-        class="w-full tn:text-xs md:text-base"
+        class="w-full tn:text-xs md:text-base py-2"
         @click="onClickOrder(variant.id)"
       />
     </div>
