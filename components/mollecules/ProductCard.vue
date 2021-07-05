@@ -30,17 +30,14 @@
               product.slug === 'disney-hotstar' ? '.png' : '.svg'
             }`"
             alt="#"
-            class="w-8 ml-1"
+            class="w-8"
           />
           <h1 class="md:text-base font-bold mx-2 max-w-[120px]">
             {{ product.name }}
           </h1>
         </div>
 
-        <div
-          v-if="product.packages"
-          class="tn:px-1 tn:py-1 md:px-2 md:mt-3 lg:px-4"
-        >
+        <div v-if="product.packages" class="tn:px-1 tn:py-1 md:px-2 md:mt-3">
           <div
             class="text-xs md:text-sm md:flex md:justify-between mt-1"
             v-for="(packageDetail, id) in product.packages"
@@ -66,7 +63,7 @@
 
         <div
           v-if="product.preview"
-          class="tn:px-1 tn:mb-1 md:px-2 md:mt-3 lg:px-4"
+          class="tn:px-1 tn:mb-1 md:px-2 md:mt-3 lg:px-2"
         >
           <div class="text-xs md:text-base mt-1">
             <p class="font-semibold md:font-normal">
