@@ -35,18 +35,18 @@
           label="Nama pemesan"
           placeholder="Tulis namamu di sini"
           :error="error_fullname"
-          class="mt-4"
+          class="my-4"
           id="fullname"
           @change="setLocalStorage('fullname')"
         />
-        <label class="mt-4 text-sm" for="nomor-telepon"
+        <label class="text-sm text-gray-600" for="nomor-telepon"
           >Nomor telepon untuk pemotongan</label
         >
 
-        <div class="relative inline-block text-left w-full">
+        <div class="relative inline-block text-left w-full mt-2">
           <div class="grid grid-cols-4 gap-3 items-end w-full">
             <ButtonDropDownNew
-              class="rounded-xl w-full"
+              class="w-full"
               @click="showCodePhone = !showCodePhone"
               :btnText="idPhone"
             />
@@ -99,7 +99,7 @@
           id="qurban_fullname"
           @change="setLocalStorage('qurban_fullname')"
         />
-        <div class="mt-1 ml-1 -mb-3">
+        <div class="mt-1 ml-1">
           <label
             class="space-x-1"
             style="display: inline-block"
@@ -154,9 +154,7 @@
           />
         </div>
         <div class="mt-4 ml-1">
-          <label
-            class="space-x-1"
-            style="display: inline-block"
+          <label class="space-x-1" style="display: inline-block"
             ><input
               v-model="isAgree"
               style="vertical-align: middle"
@@ -263,15 +261,15 @@ export default {
         postal_code: '',
       },
       registeredUser: {
-      fullname: '',
-      whatsapp: '',
-      email: '',
-      qurban_fullname: '',
-      qurban_father_name: '',
-      address: '',
-      city: '',
-      postal_code: '',
-    },
+        fullname: '',
+        whatsapp: '',
+        email: '',
+        qurban_fullname: '',
+        qurban_father_name: '',
+        address: '',
+        city: '',
+        postal_code: '',
+      },
       internationalPhoneNumbers,
       error_fullname: {
         isError: false,
@@ -543,7 +541,8 @@ export default {
         this.dataParamOrder.email = registeredUser.email;
         this.dataParamOrder.whatsapp = registeredUser.whatsapp;
         this.dataParamOrder.qurban_fullname = registeredUser.qurban_fullname;
-        this.dataParamOrder.qurban_father_name = registeredUser.qurban_father_name;
+        this.dataParamOrder.qurban_father_name =
+          registeredUser.qurban_father_name;
         this.dataParamOrder.address = registeredUser.address;
         this.dataParamOrder.city = registeredUser.city;
         this.dataParamOrder.postal_code = registeredUser.postal_code;

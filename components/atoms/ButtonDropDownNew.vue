@@ -2,13 +2,12 @@
   <div class="rounded-xl">
     <button
       type="button"
-      class="button-dropdown inline-flex justify-between items-center w-full h-full border text-gray-400 border-gray-300 tn:px-4 md:px-4 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+      class="button-dropdown rounded-lg py-3 inline-flex justify-between items-center w-full h-full border text-gray-400 border-gray-300 tn:px-4 md:px-4 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
       id="menu-button"
       :disabled="disabled"
       aria-expanded="true"
       aria-haspopup="true"
       @click="click"
-      style="padding-top: 1rem; padding-bottom: 1rem"
     >
       {{ btnText }}
       <svg

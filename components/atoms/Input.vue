@@ -6,7 +6,7 @@
     <div class="form-content relative z-0">
       <input
         class="relative z-0 appearance-none border rounded-lg w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        :class="{ 'border-danger': error.isError }"
+        :class="{ 'border-red-500': error.isError }"
         :type="type"
         :name="name"
         v-bind="$attrs"
