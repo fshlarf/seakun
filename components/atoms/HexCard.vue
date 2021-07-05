@@ -1,7 +1,7 @@
 <template>
   <div class="relative z-0 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72">
     <div
-      class="text-center absolute z-100 mx-auto left-0 right-0 top-16 lg:top-24"
+      class="text-center absolute z-100 mx-auto left-0 right-0 top-16 md:top-14 lg:top-20 xl:top-24"
     >
       <h1 class="tn:text-3xl md:text-4xl font-bold">
         {{ value }}

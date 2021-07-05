@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container tn:mt-8 md:mt-0">
     <div class="px-4">
       <div
         class="grid md:grid-cols-2 justify-around items-center md:space-x-4 lg:space-x-8 xl:space-x-20"
