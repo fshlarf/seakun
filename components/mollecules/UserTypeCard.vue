@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full rounded-xl shadow-xl text-center p-4">
+  <div class="w-full rounded-xl shadow-xl text-center p-5">
     <div class="text-center">
       <h1 class="font-bold text-secondary text-xl md:text-2xl my-1 md:my-2">
         {{ title }}
