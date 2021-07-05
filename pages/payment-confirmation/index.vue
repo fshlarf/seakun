@@ -146,7 +146,8 @@
         </div>
 
         <Button
-          class="w-full bg-green-seakun text-white"
+          variant="primary"
+          class="w-full py-2"
           label="Konfirmasi"
           :is-loading="isLoadingSubmit"
           @click="clickSubmit"

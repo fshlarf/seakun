@@ -1,6 +1,6 @@
 <template>
   <div class="thankyou max-w-2xl w-full mx-auto mt-10 py-4">
-    <div class="thankyou-container shadow-md px-4 pb-10 w-full mt-10 pt-4">
+    <div class="thankyou-container shadow-md px-6 pb-10 w-full mt-10 pt-4">
       <img
         class="w-9/12 mx-auto"
         src="/images/thank-you.png"
@@ -13,7 +13,7 @@
           untuk memberikan detail pesananmu.
         </p>
       </div>
-      <div class="detail-order bg-white px-12 mt-12 py-4">
+      <div class="rounded-xl shadow-lg bg-white px-12 mt-12 py-6">
         <div class="border-b-2 border-gray-200 pb-3">
           <p class="text-lg text-gray-400">Metode Pembayaran</p>
           <div class="flex justify-between items-center mt-2">
