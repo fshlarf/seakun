@@ -51,16 +51,16 @@
       </h3>
       <div
         v-if="provider.toLowerCase() === 'sequrban'"
-        class="payment-method__options grid grid-cols-2 gap-1 px-4 py-6"
+        class="payment-method__options grid grid-cols-2 gap-1 px-6 py-6"
       >
         <div
           v-for="(payment, index) in paymentMethodSekurban"
           :key="index"
-          class="payment-options bg-white shadow-md w-full rounded-md py-6 px-4 flex flex-column justify-center items-center"
+          class="payment-options bg-white shadow-md w-full rounded-md py-6 px-4 text-center justify-center items-center"
         >
           <img
             :src="`/images/payment/${payment.name}.png`"
-            class="w-8/12 my-2"
+            class="w-8/12 my-2 mx-auto"
           />
           <p
             class="mt-4 payment-options__norek text-sm font-bold"

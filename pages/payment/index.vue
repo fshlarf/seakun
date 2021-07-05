@@ -28,7 +28,7 @@
         :packageId="packetId"
         :detailPayment="detailPayment"
       />
-      <div class="tos-alert px-4 mt-4 text-lg" v-if="type !== 'digital'">
+      <div class="tos-alert px-6 mt-4 text-lg" v-if="type !== 'digital'">
         <p>
           Setelah melakukan pembayaran, lakukan konfirmasi pesanan agar pesanan
           kamu dapat diproses oleh Seakun.id. Mohon menunggu 10 - 60 menit. jika
@@ -42,10 +42,11 @@
           >
         </p>
       </div>
-      <div class="mt-8 mx-4 mb-4 text-center">
+      <div class="mt-8 mx-6 mb-4 text-center">
         <Button
           v-if="type !== 'digital'"
-          class="w-full bg-green-seakun text-white"
+          variant="primary"
+          class="w-full py-2"
           label="Konfirmasi Pembayaran"
           @click="onClickConfirm"
         />
