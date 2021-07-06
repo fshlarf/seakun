@@ -1,5 +1,5 @@
 <template>
-  <div class="p-6 my-6 rounded-2xl shadow-xl w-72">
+  <div v-if="group" class="p-6 rounded-2xl shadow-xl" :class="groupClass">
     <div class="flex justify-between items-center">
       <img class="w-28" :src="`${group.brand}`" alt="#" />
       <div
@@ -38,10 +38,13 @@
 import Button from '~/components/atoms/Button.vue';
 export default {
   props: {
-    group: {
-      type: Object,
-      default: {},
-    },
+    group: Object,
+    width: String,
+  },
+  data() {
+    return {
+      groupClass: `${this.width ? 'w-' + this.width : ''}`,
+    };
   },
   components: {
     Button,
