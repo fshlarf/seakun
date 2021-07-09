@@ -44,7 +44,7 @@
 
       <div
         v-else
-        class="scroll-provider flex gap-6 overflow-x-auto overflow-y-auto px-3 py-2"
+        class="scroll-provider flex space-x-6 overflow-x-auto overflow-y-auto px-3 py-2"
       >
         <div
           class="flex-none w-72 h-72"
@@ -95,57 +95,49 @@ export default {
           name: 'Netflix',
           slug: 'netflix',
           icon: '/images/icons/netflix.svg',
-          totalGroup: 430,
         },
         {
           id: 2,
           name: 'Spotify',
           slug: 'spotify',
           icon: '/images/icons/spotify.svg',
-          totalGroup: 317,
         },
         {
           id: 3,
           name: 'Gramedia',
           slug: 'gramedia',
           icon: '/images/icons/gramedia.svg',
-          totalGroup: 51,
         },
         {
           id: 4,
           name: 'Youtube',
           slug: 'youtube',
           icon: '/images/icons/youtube.svg',
-          totalGroup: 208,
         },
         {
           id: 5,
           name: 'Microsoft 365',
           slug: 'microsoft',
           icon: '/images/icons/microsoft.svg',
-          totalGroup: 52,
         },
-        {
-          id: 6,
-          name: 'Canva',
-          slug: 'canva',
-          icon: '/images/icons/canva.svg',
-          totalGroup: 18,
-        },
-        {
-          id: 7,
-          name: 'Nintendo Switch',
-          slug: 'nintendo-switch',
-          icon: '/images/icons/nintendo.svg',
-          totalGroup: 88,
-        },
-        {
-          id: 8,
-          name: 'Apple One',
-          slug: 'apple-one',
-          icon: '/images/icons/apple-one.svg',
-          totalGroup: 8,
-        },
+        // {
+        //   id: 6,
+        //   name: 'Canva',
+        //   slug: 'canva',
+        //   icon: '/images/icons/canva.svg',
+        // },
+        // {
+        //   id: 7,
+        //   name: 'Nintendo Switch',
+        //   slug: 'nintendo-switch',
+        //   icon: '/images/icons/nintendo.svg',
+        // },
+        // {
+        //   id: 8,
+        //   name: 'Apple One',
+        //   slug: 'apple-one',
+        //   icon: '/images/icons/apple-one.svg',
+        // },
       ],
     };
   },

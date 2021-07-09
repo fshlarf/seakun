@@ -34,10 +34,16 @@
           v-model="dataParamOrder.fullname"
           label="Nama pemesan"
           placeholder="Tulis namamu di sini"
+<<<<<<< HEAD
           :error="error_fullname"
           class="my-4"
+=======
+          :error="errorForm.fullname"
+          class="mt-4"
+>>>>>>> 3696ed9f0b33d4bf4cc11d388923b155823e599e
           id="fullname"
           @change="setLocalStorage('fullname')"
+          @keyup="validationForm('fullname')"
         />
         <label class="text-sm text-gray-600" for="nomor-telepon"
           >Nomor telepon untuk pemotongan</label
@@ -55,9 +61,10 @@
               label=""
               placeholder="Masukkan nomor telepon WhatsApp mu"
               class="col-span-3 w-full"
-              :error="error_whatsapp"
+              :error="errorForm.whatsapp"
               id="whatsapp"
               @change="setLocalStorage('whatsapp')"
+              @keyup="validationForm('whatsapp')"
             />
           </div>
 
@@ -86,18 +93,20 @@
           label="Email"
           placeholder="Tulis alamat email"
           class="mt-4"
-          :error="error_email"
+          :error="errorForm.email"
           id="email"
           @change="setLocalStorage('email')"
+          @keyup="validationForm('email')"
         />
         <InputForm
           v-model="dataParamOrder.qurban_fullname"
           label="Nama lengkap yang diniatkan untuk berqurban"
           placeholder="Tulis nama di sini"
           class="mt-4"
-          :error="error_qurban_fullname"
+          :error="errorForm.qurban_fullname"
           id="qurban_fullname"
           @change="setLocalStorage('qurban_fullname')"
+          @keyup="validationForm('qurban_fullname')"
         />
         <div class="mt-1 ml-1">
           <label
@@ -120,18 +129,20 @@
           label="Nama ayah kandung yang diniatkan untuk berqurban"
           placeholder="Tulis nama di sini"
           class="mt-4"
-          :error="error_qurban_father_name"
+          :error="errorForm.qurban_father_name"
           id="qurban_father_name"
           @change="setLocalStorage('qurban_father_name')"
+          @keyup="validationForm('qurban_father_name')"
         />
         <InputForm
           v-model="dataParamOrder.address"
           label="Alamat pengiriman daging qurban"
           placeholder="Tulis alamat agar vendor mengirimkan daging qurbanmu"
           class="mt-4"
-          :error="error_address"
+          :error="errorForm.address"
           id="address"
           @change="setLocalStorage('address')"
+          @keyup="validationForm('address')"
         />
         <div class="grid grid-cols-3 gap-3 mt-4">
           <InputForm
@@ -139,18 +150,20 @@
             label="Kota / Kecamatan"
             placeholder="Masukkan kota / kecamatan"
             class="mt-0 col-span-2"
-            :error="error_city"
+            :error="errorForm.city"
             id="city"
             @change="setLocalStorage('city')"
+            @keyup="validationForm('city')"
           />
           <InputForm
             v-model="dataParamOrder.postal_code"
             label="Kode pos"
             placeholder="Kode pos"
             class="mt-0"
-            :error="error_postal_code"
+            :error="errorForm.postal_code"
             id="postal_code"
             @change="setLocalStorage('postal_code')"
+            @keyup="validationForm('postal_code')"
           />
         </div>
         <div class="mt-4 ml-1">
@@ -269,6 +282,7 @@ export default {
         address: '',
         city: '',
         postal_code: '',
+<<<<<<< HEAD
       },
       internationalPhoneNumbers,
       error_fullname: {
@@ -298,10 +312,43 @@ export default {
       error_city: {
         isError: false,
         message: 'Kota / Kecamatan harus diisi',
+=======
+>>>>>>> 3696ed9f0b33d4bf4cc11d388923b155823e599e
       },
-      error_postal_code: {
-        isError: false,
-        message: 'Kode pos harus diisi',
+      internationalPhoneNumbers,
+      errorForm: {
+        fullname: {
+          isError: false,
+          message: '',
+        },
+        whatsapp: {
+          isError: false,
+          message: '',
+        },
+        email: {
+          isError: false,
+          message: '',
+        },
+        qurban_fullname: {
+          isError: false,
+          message: '',
+        },
+        qurban_father_name: {
+          isError: false,
+          message: '',
+        },
+        address: {
+          isError: false,
+          message: '',
+        },
+        city: {
+          isError: false,
+          message: '',
+        },
+        postal_code: {
+          isError: false,
+          message: '',
+        },
       },
     };
   },
@@ -326,6 +373,12 @@ export default {
         this.dataDetailQurban = {};
         this.getDataDetailQurban(this.id);
       }
+    },
+    idPhone() {
+      this.validationForm('whatsapp');
+    },
+    dataParamOrder() {
+      this.validationForm();
     },
   },
   mounted() {
@@ -365,103 +418,190 @@ export default {
       this.isShowModalPackage = false;
       this.$router.push(`/sequrban/order?id=${id}`);
     },
-    validateInput() {
-      const number = /^[0-9]+$/;
-      const char = /^[A-Za-z][A-Za-z\s]*$/;
-      const mail = /^[^\s@]+@[^\s@]+$/;
+    validationForm(input) {
+      const { dataParamOrder } = this;
+      const numberFormat = /^[0-9]*$/;
+      const nameFormat = /^[A-Za-z][A-Za-z\s]*$/;
+      const mailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const idnPhoneFormat = /^[8][0-9]*$/;
+      const globalPhoneFormat = /^[0-9]*$/;
+      let isValid = true;
+      let errorTemp = {
+        fullname: {
+          isError: false,
+          message: '',
+        },
+        whatsapp: {
+          isError: false,
+          message: '',
+        },
+        email: {
+          isError: false,
+          message: '',
+        },
+        qurban_fullname: {
+          isError: false,
+          message: '',
+        },
+        qurban_father_name: {
+          isError: false,
+          message: '',
+        },
+        address: {
+          isError: false,
+          message: '',
+        },
+        city: {
+          isError: false,
+          message: '',
+        },
+        postal_code: {
+          isError: false,
+          message: '',
+        },
+      };
 
-      if (this.dataParamOrder.fullname) {
-        if (!this.dataParamOrder.fullname.match(char)) {
-          this.error_fullname.isError = true;
-          this.error_fullname.message = 'Format nama salah';
-        } else {
-          this.error_fullname.isError = false;
+      if (input === 'fullname' || !input) {
+        if (dataParamOrder.fullname === '') {
+          errorTemp.fullname = {
+            isError: true,
+            message: 'Nama lengkap harus diisi',
+          };
+          isValid = false;
+        } else if (!dataParamOrder.fullname.match(nameFormat)) {
+          errorTemp.fullname = {
+            isError: true,
+            message: 'Format nama salah',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_fullname.isError = true;
-        this.error_fullname.message = 'Nama lengkap harus diisi';
       }
 
-      if (this.dataParamOrder.qurban_fullname) {
-        if (!this.dataParamOrder.qurban_fullname.match(char)) {
-          this.error_qurban_fullname.isError = true;
-          this.error_qurban_fullname.message = 'Format nama salah';
-        } else {
-          this.error_qurban_fullname.isError = false;
+      if (input === 'qurban_fullname' || !input) {
+        if (dataParamOrder.qurban_fullname === '') {
+          errorTemp.qurban_fullname = {
+            isError: true,
+            message: 'Nama lengkap harus diisi',
+          };
+          isValid = false;
+        } else if (!dataParamOrder.qurban_fullname.match(nameFormat)) {
+          errorTemp.qurban_fullname = {
+            isError: true,
+            message: 'Format nama salah',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_qurban_fullname.isError = true;
-        this.error_qurban_fullname.message = 'Nama lengkap harus diisi';
       }
 
-      if (this.dataParamOrder.qurban_father_name) {
-        if (!this.dataParamOrder.qurban_father_name.match(char)) {
-          this.error_qurban_father_name.isError = true;
-          this.error_qurban_father_name.message = 'Format nama salah';
-        } else {
-          this.error_qurban_father_name.isError = false;
+      if (input === 'qurban_father_name' || !input) {
+        if (dataParamOrder.qurban_father_name === '') {
+          errorTemp.qurban_father_name = {
+            isError: true,
+            message: 'Nama lengkap harus diisi',
+          };
+          isValid = false;
+        } else if (!dataParamOrder.qurban_father_name.match(nameFormat)) {
+          errorTemp.qurban_father_name = {
+            isError: true,
+            message: 'Format nama salah',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_qurban_father_name.isError = true;
-        this.error_qurban_father_name.message = 'Nama lengkap harus diisi';
       }
 
-      if (this.dataParamOrder.email) {
-        if (!this.dataParamOrder.email.match(mail)) {
-          this.error_email.isError = true;
-          this.error_email.message = 'Format email salah';
-        } else {
-          this.error_email.isError = false;
+      if (input === 'email' || !input) {
+        if (dataParamOrder.email === '') {
+          errorTemp.email = {
+            isError: true,
+            message: 'Email harus diisi',
+          };
+          isValid = false;
+        } else if (!dataParamOrder.email.match(mailFormat)) {
+          errorTemp.email = {
+            isError: true,
+            message: 'Format email salah',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_email.isError = true;
-        this.error_email.message = 'Email harus diisi';
       }
 
-      if (this.dataParamOrder.whatsapp) {
-        if (!this.dataParamOrder.whatsapp.match(number)) {
-          this.error_whatsapp.isError = true;
-          this.error_whatsapp.message = 'Format nomor telepon salah';
-        } else {
-          this.error_whatsapp.isError = false;
+      if (input === 'whatsapp' || !input) {
+        if (dataParamOrder.whatsapp === '') {
+          errorTemp.whatsapp = {
+            isError: true,
+            message: 'Nomor whatsapp harus diisi',
+          };
+          isValid = false;
+        } else if (
+          this.idPhone === '+62' &&
+          !dataParamOrder.whatsapp.match(idnPhoneFormat)
+        ) {
+          errorTemp.whatsapp = {
+            isError: true,
+            message: 'Format nomor whatsapp salah. cth: 81234567890',
+          };
+          isValid = false;
+        } else if (
+          this.idPhone !== '+62' &&
+          !dataParamOrder.whatsapp.match(globalPhoneFormat)
+        ) {
+          errorTemp.whatsapp = {
+            isError: true,
+            message: 'Format nomor whatsapp salah. cth: 81234567890',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_whatsapp.isError = true;
-        this.error_whatsapp.message = 'Nomor telepon harus diisi';
       }
 
-      if (this.dataParamOrder.postal_code) {
-        if (this.dataParamOrder.postal_code.length <= 5) {
-          if (!this.dataParamOrder.postal_code.match(number)) {
-            this.error_postal_code.isError = true;
-            this.error_postal_code.message = 'Format kode pos salah';
-          } else {
-            this.error_postal_code.isError = false;
-          }
-        } else {
-          this.error_postal_code.isError = true;
-          this.error_postal_code.message = 'Maksimal kode pos 5 angka';
+      if (input === 'postal_code' || !input) {
+        if (dataParamOrder.postal_code === '') {
+          errorTemp.postal_code = {
+            isError: true,
+            message: 'Kode pos harus diisi',
+          };
+          isValid = false;
+        } else if (!dataParamOrder.postal_code.match(numberFormat)) {
+          errorTemp.postal_code = {
+            isError: true,
+            message: 'Format kode pos salah',
+          };
+          isValid = false;
+        } else if (dataParamOrder.postal_code.length > 5) {
+          errorTemp.postal_code = {
+            isError: true,
+            message: 'Maksimal kode pos 5 angka',
+          };
+          isValid = false;
         }
-      } else {
-        this.error_postal_code.isError = true;
-        this.error_postal_code.message = 'Kode pos harus diisi';
       }
 
-      this.error_address.isError = !this.dataParamOrder.address;
-      this.error_city.isError = !this.dataParamOrder.city;
+      if (input === 'address' || !input) {
+        if (dataParamOrder.address === '') {
+          errorTemp.address = {
+            isError: true,
+            message: 'Alamat harus diisi',
+          };
+          isValid = false;
+        }
+      }
+
+      if (input === 'city' || !input) {
+        if (dataParamOrder.city === '') {
+          errorTemp.city = {
+            isError: true,
+            message: 'Kecamatan / kota harus diisi',
+          };
+          isValid = false;
+        }
+      }
+
+      this.errorForm = { ...errorTemp };
+      return isValid;
     },
     clickSubmit() {
-      this.validateInput();
-      if (
-        !this.error_fullname.isError &&
-        !this.error_whatsapp.isError &&
-        !this.error_email.isError &&
-        !this.error_qurban_fullname.isError &&
-        !this.error_qurban_father_name.isError &&
-        !this.error_address.isError &&
-        !this.error_city.isError &&
-        !this.error_postal_code.isError
-      ) {
+      this.validationForm();
+      console.log(this.validationForm());
+      if (this.validationForm()) {
         this.isShowModalConfirmation = true;
       }
     },

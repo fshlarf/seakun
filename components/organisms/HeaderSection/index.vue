@@ -24,7 +24,7 @@
     </div>
     <div class="relative z-0 pt-20">
       <div
-        class="px-3 md:hidden flex space-x-3 overflow-x-auto overflow-y-hidden slider2 place-items-stretch items-stretch"
+        class="px-3 md:hidden flex overflow-x-auto space-x-3 overflow-y-hidden slider2 place-items-stretch items-stretch"
       >
         <div class="w-11/12 h-auto flex-none md:hidden">
           <BannerMainMobile @clickOrder="onClickOrder" />

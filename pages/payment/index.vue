@@ -52,8 +52,7 @@
         />
         <a
           v-else
-          type="button"
-          class="btn btn-primary"
+          class="btn btn-primary py-2 px-4"
           target="_blank"
           :href="confirmationWhatsapp"
           >Konfirmasi ke Whatsapp</a
