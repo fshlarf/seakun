@@ -4,7 +4,7 @@
     <div class="netflix pt-24 tn:px-6 md:px-0">
       <div class="container">
         <Title title="Proses Pendaftaran dan Pembayaran Netflix" />
-        <div class="row justify-content-around content-mobile">
+        <div>
           <ul class="list-decimal list-outside space-y-2">
             <li>Buka browser dan akses www.netflix.com</li>
             <li>
