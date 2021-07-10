@@ -1,17 +1,17 @@
 <template>
   <div>
     <NavbarBlank />
-    <div class="scheme-price">
+    <div class="pt-24">
       <div class="container">
         <Title title="Bagaimana Seakun.id mengatur harga?" />
-        <div class="scheme-price__info">
+        <div class="tn:text-sm md:text-base tn:px-3 md:px-0">
           Dengan konsep patungan, melalui Seakun.id harga Paket Grup dari
           masing-masing provider akan dibagi rata per jumah member dalam suatu
           grup. Sedangkan harga final yang dibayarkan oleh member adalah harga
           patungan yang sudah termasuk biaya admin Seakun.id.
         </div>
         <br />
-        <div class="scheme-price__info">
+        <div class="tn:text-sm md:text-base tn:px-3 md:px-0">
           <b>Perlu diperhatikan</b> bahwa harga paket dari provider bisa saja
           tidak bulat, sehingga Seakun.id melakukan pembulatan harga patungan
           dengan tujuan untuk memudahkan member dalam melihat nominal yang akan
@@ -19,43 +19,46 @@
           Seakun.id dan dengan berlangganan melalui Seakun.id, member dinyatakan
           sudah mengerti dan setuju dengan skema harga yang sudah ditetapkan.
         </div>
-        <div class="row justify-content-around content-mobile">
+        <div
+          class="mt-8 grid tn:grid-cols-1 lg:grid-cols-2 tn:gap-4 md:gap-6 justify-between"
+        >
           <div v-for="(item, index) in providerList" :key="index">
-            <div class="card">
-              <img :src="item.img" alt="image not found" class="logo" />
-              <img :src="item.screenshot" alt="image not found" class="ss" />
-              <p class="font-weight-bold info-mobile">Detail Harga</p>
+            <div
+              class="w-full tn:p-3 md:p-6 xl:mx-2 border tn:shadow rounded-xl"
+            >
+              <img :src="item.img" alt="image not found" class="h-10" />
+              <img
+                :src="item.screenshot"
+                alt="image not found"
+                class="w-full h-full mx-auto my-2"
+              />
+              <p class="tn:text-lg md:text-lg font-bold my-2">Detail Harga</p>
               <div
-                class="row pt-1"
+                class="flex justify-between items-center space-y-1 tn:text-xs md:text-base"
                 v-for="(info, ind) in item.informations"
                 :key="ind"
+                :class="{ 'font-bold': info.is_total }"
               >
-                <div
-                  :class="`col-md-auto info-mobile ${
-                    info.is_total ? 'font-weight-bold' : ''
-                  }`"
-                >
+                <div>
                   {{ info.title }}
                 </div>
-                <div
-                  :class="`col text-right info-mobile ${
-                    info.is_total ? 'font-weight-bold' : ''
-                  }`"
-                >
+                <div>
                   {{ info.value }}
                 </div>
               </div>
-              <div class="divider"></div>
-              <p class="font-weight-bold">Skema Berlangganan</p>
-              <ol style="padding-left: 1rem">
-                <li
-                  class="pt-1"
-                  v-for="(scheme, indx) in item.schemes"
-                  :key="indx"
+              <div class="h-px w-full bg-gray-400 my-2"></div>
+              <div>
+                <p class="tn:text-lg md:text-lg font-bold my-2">
+                  Skema Berlangganan
+                </p>
+                <ol
+                  class="space-y-1 tn:text-xs md:text-base tn:ml-3 md:ml-4 list-decimal list-outside"
                 >
-                  {{ scheme }}
-                </li>
-              </ol>
+                  <li v-for="(scheme, indx) in item.schemes" :key="indx">
+                    {{ scheme }}
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </div>
@@ -85,84 +88,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.scheme-price {
-  padding: 100px 0px 40px !important;
-
-  &__info {
-    padding: 0px 17px;
-    font-size: 14px;
-  }
-
-  .divider {
-    height: 1px;
-    width: 100%;
-    background: gray;
-    margin: 1rem 0;
-  }
-
-  .card {
-    padding: 16px 24px;
-    border: 1px solid #eeeeee;
-    border-radius: 8px;
-    box-shadow: 0px 0px 4px #dddddd;
-    margin: 3rem 0 0;
-    max-width: 500px;
-
-    .ss {
-      display: flex;
-      align-self: center;
-      width: 100%;
-      height: 224px;
-      object-fit: contain;
-      margin: 2rem 0;
-    }
-
-    .logo {
-      width: 129px;
-      height: 39px;
-      object-fit: contain;
-      margin-left: -8px;
-    }
-  }
-}
-
-@media (max-width: 800px) {
-  .scheme-price {
-    &__info {
-      padding: 0px 8px;
-    }
-    .content-mobile {
-      display: block;
-      width: 100%;
-      padding: 0 0px;
-      margin-left: 0 !important;
-      .card {
-        img {
-          margin: 0 0;
-        }
-      }
-    }
-
-    .info-mobile {
-      text-align: center !important;
-    }
-
-    .info {
-      font-size: 12px;
-      width: auto !important;
-      padding-right: 0 !important;
-    }
-
-    .row {
-      margin-bottom: 5px;
-    }
-
-    .divider {
-      width: 100%;
-      height: 1px;
-      margin: 1rem 0;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>
