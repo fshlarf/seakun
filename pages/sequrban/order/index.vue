@@ -34,13 +34,8 @@
           v-model="dataParamOrder.fullname"
           label="Nama pemesan"
           placeholder="Tulis namamu di sini"
-<<<<<<< HEAD
-          :error="error_fullname"
-          class="my-4"
-=======
           :error="errorForm.fullname"
           class="mt-4"
->>>>>>> 3696ed9f0b33d4bf4cc11d388923b155823e599e
           id="fullname"
           @change="setLocalStorage('fullname')"
           @keyup="validationForm('fullname')"
@@ -282,38 +277,6 @@ export default {
         address: '',
         city: '',
         postal_code: '',
-<<<<<<< HEAD
-      },
-      internationalPhoneNumbers,
-      error_fullname: {
-        isError: false,
-        message: 'Nama lengkap harus diisi',
-      },
-      error_whatsapp: {
-        isError: false,
-        message: 'Nomor whatsapp harus diisi',
-      },
-      error_email: {
-        isError: false,
-        message: 'Email harus diisi',
-      },
-      error_qurban_fullname: {
-        isError: false,
-        message: 'Nama lengkap harus diisi',
-      },
-      error_qurban_father_name: {
-        isError: false,
-        message: 'Nama ayah harus diisi',
-      },
-      error_address: {
-        isError: false,
-        message: 'Alamat harus diisi',
-      },
-      error_city: {
-        isError: false,
-        message: 'Kota / Kecamatan harus diisi',
-=======
->>>>>>> 3696ed9f0b33d4bf4cc11d388923b155823e599e
       },
       internationalPhoneNumbers,
       errorForm: {
