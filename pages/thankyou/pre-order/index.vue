@@ -1,46 +1,44 @@
 <template>
   <div class="payment">
     <div class="container">
-      <div class="row">
+      <div>
         <div
-          class="col md:bg-white tn:mt-12 tn:-mb-12 md:mb-0 md:mt-24 md:rounded-2xl md:shadow-xl tn:p-4 tn:py-8 md:p-12 text-center"
+          class="md:bg-white tn:mt-12 tn:-mb-12 md:mb-0 md:mt-24 md:rounded-2xl md:shadow-xl tn:p-4 tn:py-8 md:p-12 text-center"
         >
-          <div class="payment__img md:w-3/5 mx-auto">
+          <div class="md:w-3/5 mx-auto">
             <img
               class="w-full"
               src="/images/thank-you.png"
               alt="Image not found"
             />
           </div>
-          <h3 class="payment-thankyou text-2xl font-bold mt-10 text-center">
-            Thank You!
-          </h3>
+          <h3 class="text-2xl font-bold mt-10 text-center">Thank You!</h3>
 
-          <p class="my-8 md:w-3/5 mx-auto">
+          <p class="my-8 md:w-4/5 lg:w-3/5 mx-auto">
             Terima kasih telah melakukan pendaftaran.
             <br />Paket ini adalah paket Pre-Order dimana akun akan dibuat
             setelah member dalam satu grup telah terkumpul
             {{ setNumberMember(provider) }} orang.
           </p>
           <div
-            class="box md:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto border-primary rounded p-6"
+            class="md:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto border-primary rounded p-6 space-y-1"
           >
             <div class="grid grid-cols-5">
-              <div class="col box-title text-left font-bold">Provider</div>
-              <div class="col col-lg-1">:</div>
-              <div class="col box-item col-span-3 text-left">
+              <div class="text-left font-bold">Provider</div>
+              <div>:</div>
+              <div class="col-span-3 text-left">
                 {{ setNameProvider(provider) }}
               </div>
             </div>
-            <div class="grid grid-cols-5 mt-1">
-              <div class="col box-title text-left font-bold">Paket</div>
-              <div class="col col-lg-1">:</div>
-              <div class="col box-item col-span-3 text-left">{{ packet }}</div>
+            <div class="grid grid-cols-5">
+              <div class="text-left font-bold">Paket</div>
+              <div>:</div>
+              <div class="col-span-3 text-left">{{ packet }}</div>
             </div>
-            <div class="grid grid-cols-5 mt-1">
-              <div class="col box-title text-left font-bold">Harga</div>
-              <div class="col col-lg-1">:</div>
-              <div class="col box-item col-span-3 text-left">
+            <div class="grid grid-cols-5">
+              <div class="text-left font-bold">Harga</div>
+              <div>:</div>
+              <div class="col-span-3 text-left">
                 {{ formatMoneyRupiah(total) }}
               </div>
             </div>
@@ -50,7 +48,7 @@
               <i>Baca ketentuan Pre-Order selengkapnya</i>
             </a>
           </p>
-          <p class="md:w-3/5 mx-auto">
+          <p class="md:w-4/5 lg:w-3/5 mx-auto">
             Pembayaran akan dilakukan setelah satu grup full dan akun berhasil
             dibuat.
             <br />
