@@ -6,8 +6,8 @@
         Silahkan isi terlebih dahulu sebelum melakukan pemesanan.
       </p>
     </div>
-    <div class="flex justify-between items-center mt-10 mb-4">
-      <p class="md:text-xl tn:text-lg font-bold">Produk Yang dipesan</p>
+    <div class="flex justify-between items-center px-2 mt-10 mb-4">
+      <p class="md:text-xl tn:text-lg font-bold">Produk yang dipesan</p>
       <p
         class="md:text-sm tn:text-base text-green-seakun cursor-pointer"
         @click="onClickChangePacket"
