@@ -1,12 +1,12 @@
 <template>
   <div class="container-payment max-w-2xl w-full mx-auto md:mt-10 px-4">
-    <div class="tn:pt-8 md:pt-10 px-2">
+    <div class="tn:pt-8 md:pt-10">
       <h2 class="md:text-2xl tn:text-lg font-bold">Pesanan</h2>
       <p class="md:text-lg tn:text-base mt-3">
         Silahkan isi terlebih dahulu sebelum melakukan pemesanan.
       </p>
     </div>
-    <div class="flex justify-between items-center px-2 mt-10 mb-4">
+    <div class="flex justify-between items-center mt-10 mb-4">
       <p class="md:text-xl tn:text-lg font-bold">Produk Yang dipesan</p>
       <p
         class="md:text-sm tn:text-base text-green-seakun cursor-pointer"
